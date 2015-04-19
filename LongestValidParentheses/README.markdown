@@ -31,4 +31,4 @@ The cause of the problem is as the first scan ends, the currently matched "()()"
 
 To overcome the problem, a reverse scan from right to left is performed with same algorithm except switching the process of '(' and ')'. With this approach, a false negative substring in one scan will be correctly treated in the reverse scan. By combining the results of two scans the correct answer will be given successfully.
 
-Add strings to SampleInput.txt. Use `cat SampleInput.txt | ./par` to run and see results.
+Add strings to SampleInput.txt. Use `cat SampleInput.txt | ./[compiled_program]` to run and see results.

@@ -7,7 +7,6 @@ int longestValidParentheses(string s);
 
 int main()
 {
-	//cout << "Enter a string containing only '(' and ')'" << endl;
 	string input;
 	cin >> input;
 
@@ -18,21 +17,25 @@ int main()
 
 int longestValidParentheses(string s)
 {
+	//First scan, from left to right.
+
 	int longestLeft = 0;
 	int leftCnt = 0;
 	int current = 0;
 	for(int i=0; i<s.length(); ++i){
 		if(s[i] == '(')
 			leftCnt++;
-		else if(s[i] == ')' && leftCnt > 0){
+		else if(s[i] == ')' && leftCnt > 0){ //If a valid ')' is read
 			leftCnt--;
 			current += 2;
-			if(leftCnt == 0 && current > longestLeft)
+			if(leftCnt == 0 && current > longestLeft) //If there is no unmatched '('
 				longestLeft = current;
 		}
 		else
 			current = 0;
 	}
+
+	//Second scan, from right to left
 
 	int longestRight = 0;
 	int rightCnt = 0;
@@ -50,5 +53,7 @@ int longestValidParentheses(string s)
 		else
 			current = 0;
 	}
+
+	//Combine the two results and return the larger one
 	return longestLeft > longestRight ? longestLeft : longestRight;
 }

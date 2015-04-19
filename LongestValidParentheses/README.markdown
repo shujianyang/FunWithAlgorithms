@@ -20,9 +20,9 @@ The first scan is from left to right. It does the following job:
 
 3. If, after the decrease, `leftCnt` becomes 0, the substring will be treated as a **perfectly matched**. The longest length of all perfectly matched strings is stored in `longestLeft`.
 
-In a nutshell, a currently matched strings is a valid string. However, its length may keep growing by reading ')' since there are still unmatched '(' to its left. On contrary, a perfectly matched string is a valid string whose length is fixed.
+4. In a nutshell, a currently matched strings is a valid string. However, its length may keep growing by reading ')' since there are still unmatched '(' to its left. On contrary, a perfectly matched string is a valid string whose length is fixed.
 
-4. If an invalid ')' is encountered, currently matched substring will be reset.
+5. If an invalid ')' is encountered, currently matched substring will be reset.
 
 After this scan, the length of longest perfectly matched substring is recorded in `longestLeft`. However, this may cause false negative result, that is missing a valid substring. For example, a scan of "()(()()" prints the result as 2, because the length of the leftmost perfectly matched substring "()" is considered as the largest one. However, the rightmost currently matched substring "()()" is actually longer than "()" and should be the correct result.
 

@@ -5,6 +5,7 @@ Given a string containing only '(' and ')', find the length of the longest nicel
 
 ###Example
 "(()(()()" prints 4. 
+
 "()())((()()))" prints 8.
 
 ###Analysis
@@ -29,3 +30,6 @@ After this scan, the length of longest perfectly matched substring is recorded i
 The cause of the problem is as the first scan ends, the currently matched "()()" does not have a chance to be converted to a perfectly matched substring.Since no stack is used in this algorithm, the number and positions of unmatched '(' are unknown, making it difficult to convert them into perfectly matched substrings.
 
 To overcome the problem, a reverse scan from right to left is performed with same algorithm except switching the process of '(' and ')'. With this approach, a false negative substring in one scan will be correctly treated in the reverse scan. By combining the results of two scans the correct answer will be given successfully.
+
+###Running
+Add strings to SampleInput.txt. Use `cat SampleInput.txt | ./[compiled_program_name]` to run and see results.

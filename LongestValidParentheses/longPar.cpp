@@ -8,9 +8,18 @@ int longestValidParentheses(string s);
 int main()
 {
 	string input;
-	cin >> input;
-
-	cout << longestValidParentheses(input) << endl;
+	while(cin >> input){
+		bool legal = true;
+		for(int i=0; i<input.length(); ++i){
+			if(input[i] != '(' && input[i] != ')'){
+				cerr << "Input string must contain only '(' and ')'!" << endl;
+				legal = false;
+				break;
+			}
+		}
+		if(legal)
+			cout << input << ": " << longestValidParentheses(input) << endl;
+	}
 
 	return 0;
 }

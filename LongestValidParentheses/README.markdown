@@ -1,6 +1,6 @@
 #Longest Valid Parentheses
 
-###Question
+###Problem
 Given a string containing only '(' and ')', find the length of the longest nicely matched parentheses substring.
 
 ###Example
